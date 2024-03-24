@@ -1,0 +1,244 @@
+:root{
+    --pr-color: #fff;
+    --second-color: #0a0a0a;
+    --color-1-1: #BE2518;
+    --color-1-2: #ff6b4f;
+    --cubicbz: cubic-bezier(.9,0,.1,1);
+    --fz-big: 60px;
+    --pd: 50px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(208, 236, 255);
+    /* background-color: crimson; */
+}
+
+#page1 h1{
+    width: 100%;
+    text-align: center;
+    font-size: 4vw;
+    padding-top: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+}
+
+#members{
+    margin-top: 50px;
+    height: 40vh;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#members::before, #members::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 550px;
+    z-index: 2;
+}
+
+#members::after{
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(208, 236, 255));
+}
+
+#members::before{
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(208, 236, 255));
+}
+
+#members #logos{
+    display: flex;
+    animation: 12s slide infinite linear;
+    cursor: pointer;
+}
+
+/* #members:hover #logos{
+    animation-play-state: paused;
+} */
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+    
+}
+
+#members #logos #logo{
+    height: 90%;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    /* transform: translateX(-100vw); */
+}
+
+#members #logos #logo #img-div{
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    background-color: white;
+    overflow: hidden;
+    border: 0.5px solid #dbd9d9;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#members #logos #logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#members #logos #logo h4{
+    font-size: 0.9vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#page2{
+    height: auto;
+    width: 100%;
+    background-color: #0a0a0a;
+}
+
+
+#projects{
+    display: flex;
+}
+
+#left{
+    position: relative;
+    width: 54%;
+    z-index: 2;
+}
+
+#projects-text{
+    margin: auto;
+    width: 80%;
+}
+
+#project-info{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#project-num{
+    display: block;
+    line-height: 0.9;
+    text-align: right;
+    font-size: 18px;
+    transform: skewX(-20deg);
+    color: var(--color-1-1);
+}
+
+#title{
+    text-align: right;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    color: var(--pr-color);
+}
+
+#title #stroke{
+    display: block;
+    color: transparent;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 5px;
+    -webkit-text-stroke: 1px var(--pr-color);
+}
+
+#project-link{
+    display: block;
+    width: 250px;
+    margin-top: 50px;
+    margin-left: auto;
+    padding: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--pr-color);
+    letter-spacing: 4px;
+    border: 2px solid var(--color-1-1);
+    border-radius: 30px;
+    transition: .4s;
+}
+
+#project-link:hover{
+    background: var(--color-1-1);
+    color: var(--color-1-2);
+    letter-spacing: 6px;
+}
+
+#right{
+    width: 46%;
+    height: auto;
+}
+
+#right-b1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: sticky;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+}
+
+#right-photo{
+    width: 40vw;
+    height: 30vw;
+    position: relative;
+}
+
+#right-photo-item{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 80px;
+    border: 1px solid #fff;
+    overflow: hidden;
+}
+
+#right-photo-item img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
